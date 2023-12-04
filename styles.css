@@ -1,0 +1,543 @@
+:root {
+    --color-primary: 5, 85%, 63%; /* soft red */
+    --color-accent: 35 77% 62%; /* soft orange */
+
+    --color-neutral-100: 36 100% 99%; /* off-white */
+    --color-neutral-200: 233 8% 79%; /* greyish blue */
+    --color-neutral-600: 236 13% 42%; /* dark grayish blue */
+    --color-neutral-700: 240 100% 5%; /* very dark blue */
+
+    --fw-400: 400;
+    --fw-700: 700;
+    --fw-800: 800;
+
+    --ff-primary: 'Inter', sans-serif;
+
+    --fs-300: 0.93rem; /* 15px */
+    --fs-400: 1rem; /* 16px */
+    --fs-500: 1.13rem; /* 18px */
+    --fs-550: 1.25rem; /* 20px */
+    --fs-600: 2rem; /* 32px */
+    --fs-700: 2.5rem; /* 40px */
+    --fs-800: 3.5rem; /* 56px */
+
+    --line-height-400: 24px;
+    --line-height-500: 26px;
+    --line-height-550: 32px;
+    --line-height-600: 40px;
+    --line-height-700: 56px;
+
+
+    --spacing-100: 0.25rem; /* 4px */
+    --spacing-200: 0.5rem; /* 8px */
+    --spacing-300: 0.75rem; /* 12px */
+    --spacing-375: 0.87rem; /* 14px */
+    --spacing-400: 1rem; 
+    --spacing-450: 1.5rem; /* 24px */
+    --spacing-500: 1.81rem; /* 29px */
+    --spacing-600: 2rem; /* 32px */
+    --spacing-700: 2.31rem; /* 37px */
+    --spacing-750: 2.87rem; /* 46px */
+    --spacing-800: 3.43rem; /* 55px */
+    --spacing-850: 4rem; /* 64px */
+    --spacing-900: 4.43rem; /* 71px */
+
+}
+
+
+
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+header {
+    margin-top: 3rem;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility Classes */
+
+.bg-neutral-700 {
+    background-color: hsl(var(--color-neutral-700));
+}
+
+.color-neutral-100 {
+    color: hsl(var(--color-neutral-100));
+}
+
+.color-neutral-200 {
+    color: hsl(var(--color-neutral-200));
+}
+
+.color-neutral-600 {
+    color: hsl(var(--color-neutral-600));
+}
+
+.color-neutral-700 {
+    color: hsl(var(--color-neutral-700));
+}
+
+.color-primary {
+    color: hsl(var(--color-primary));
+}
+
+.color-accent {
+    color: hsl(var(--color-accent));
+}
+
+.container {
+    width: min(95%, 70rem);
+    margin-inline: auto;
+}
+
+.fw-400 {
+    font-weight: var(--fw-400);
+}
+
+.fw-700 {
+    font-weight: var(--fw-700);
+}
+
+.fw-800 {
+    font-weight: var(--fw-800);
+}
+
+.fs-300 {
+    font-size: var(--fs-300);
+}
+
+.fs-400 {
+    font-size: var(--fs-400);
+}
+
+.fs-500 {
+    font-size: var(--fs-500);
+}
+
+.fs-550 {
+    font-size: var(--fs-550);
+}
+
+.fs-600 {
+    font-size: var(--fs-600);
+}
+
+.fs-700 {
+    font-size: var(--fs-700);
+}
+
+.fs-800 {
+    font-size: var(--fs-800);
+}
+
+.line-height-400 {
+    line-height: var(--line-height-400);
+}
+
+.line-height-500 {
+    line-height: var(--line-height-500);
+}
+
+.line-height-550 {
+    line-height: var(--line-height-550);
+}
+
+.line-height-600 {
+    line-height: var(--line-height-600);
+}
+
+.line-height-700 {
+    line-height: var(--line-height-700);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--spacing-300);
+}
+
+.flow-news-feed :first-child {
+    margin-bottom: var(--spacing-400);
+}
+
+.flow-news-feed > *:where(:not(:first-child)) {
+    margin-top: var(--spacing-300);
+}
+
+.section-one {
+   margin-top: var(--spacing-600); 
+}
+
+/* Components */
+
+body {
+    display: grid;
+    place-content: center;
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-400);
+}
+
+header nav {
+    margin-inline: var(--spacing-300);
+}
+
+header nav.flex {
+    justify-content: space-between;
+}
+
+header ul {
+    gap: var(--spacing-700);
+}
+
+header a:hover {
+    color: hsl(var(--color-primary));
+}
+
+.hamburger {
+    display: none;
+}
+
+main button:hover {
+    background-color: hsl(var(--color-neutral-700));
+}
+
+button {
+    border: none;
+    padding: var(--spacing-300);
+    padding-inline: var(--spacing-700);
+    letter-spacing: 4.37px;
+    text-transform: uppercase;
+    background-color: hsl(var(--color-primary));
+    color: hsl(var(--color-neutral-100));
+    font-weight: var(--fw-700);
+    line-height: var(--line-height-400);
+    font-size: var(--fs-300);
+    cursor: pointer;
+}
+
+.section-one h1 {
+    font-size: var(--fs-800);
+    font-weight: var(--fw-800);
+    line-height: var(--line-height-700);
+}
+
+.section-one :nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-400);
+}
+
+.section-one :nth-child(2) a {
+    padding: 0;
+}
+
+.section-one :nth-child(2) p:not(:last-child) {
+    border-bottom: hsl(var(--color-neutral-100) / .25) 1px solid;
+    padding-bottom: var(--spacing-500);
+}
+
+.section-one :nth-child(4) p {
+    
+    color: hsl(var(--color-neutral-600));
+    font-size: var(--fs-300);
+    line-height: var(--line-height-500);
+    margin-bottom: var(--spacing-400);
+}
+
+.section-two a {
+    font-weight: var(--fw-800);
+}
+
+/* im having a war with myself here. need to be careful of using specificity in the future. */
+.news-feed li :nth-child(2) a:hover{
+    color: hsl(var(--color-primary));
+}
+
+.top-nav {
+    flex-direction: row;
+    
+}
+
+.small-image {
+    width: 100px;
+    min-height: 100%;
+    object-fit:contain;
+    flex-shrink: 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-auto-columns: 1fr;
+    /* grid-template-rows: 1fr 1fr; */
+    grid-template-areas:
+    "one one two"
+    "three four two"
+    ;
+}
+
+.hero-grid a:hover {
+    color: hsl(var(--color-accent));
+}
+
+.hero-grid > :nth-child(1) {
+    grid-area: one;
+}
+
+.hero-grid > :nth-child(2) {
+    grid-area: two;
+}
+
+.hero-grid > :nth-child(3) {
+    grid-area: three;
+}
+
+.hero-grid > :nth-child(4) {
+    grid-area: four;
+}
+
+.hero-grid > * {
+    margin: var(--spacing-300);
+}
+
+.hero-grid img {
+    height: 300px;
+    width: 100%; 
+    object-fit: cover;
+    object-position: 0% 9%;
+}
+
+.news-feed-grid {
+    margin-top: var(--spacing-500);
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr; 
+}
+
+.news-feed li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--spacing-300);
+}
+
+.news-feed div {
+    margin-left: var(--spacing-400);
+}
+
+.news-feed li :first-child {
+    color: hsl(var(--color-neutral-200));
+    font-weight: var(--fw-700);
+    font-size: var(--fs-600);
+    line-height: var(--line-height-550);
+}
+
+.news-feed li :nth-child(2) {
+    
+    color: var(--color-neutral-200);
+}
+
+.attribution {
+    margin-top: var(--spacing-600);
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+.attribution a {
+    color: hsl(var(--color-primary));
+}
+
+@media (max-width: 768px) {
+    
+    .hamburger {
+        display: block;
+        padding-top: var(--spacing-400);
+    }
+
+    .hamburger button{
+        background: none;
+        border: none;
+        padding: 0;
+    }
+
+    .top-nav-container {
+        display: none;
+        background-color: white;
+        height: 100vh;
+        width: 70vw;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .top-nav-container.active {
+        display: block;
+    }
+
+    #mobile-svg {
+        position: static;
+        z-index: auto;
+    }
+
+    #mobile-svg.active{
+        position: fixed;
+        top: 3rem;
+        right: 1rem;
+        z-index: 1001;
+    }
+
+    .top-nav {
+        flex-direction: column;
+        padding-left: var(--spacing-450);
+        padding-top: calc(var(--spacing-900) * 2.5);
+        gap: var(--spacing-450);
+    }
+
+    .top-nav a {
+        font-size: var(--fs-500);
+    }
+
+    /* .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "one"
+        "three"
+        "four"
+        "two"
+        ;
+    } */
+
+    .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto; /* Set each row height to auto */
+        grid-template-areas:
+        "one"
+        "three"
+        "four"
+        "two"
+        ;
+    }
+
+    .section-one {
+        margin-top: var(--spacing-450);
+    }
+
+    /* this selector is for the fourth div in section-one. */
+    .section-one div:nth-child(4) {
+        margin-top: var(--spacing-100);
+        margin-bottom: var(--spacing-750);
+    
+    }
+
+    .news-feed-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-feed li {
+        justify-content: center;
+        max-width: 445px;
+    }
+
+    .attribution {
+        text-align: center;
+        font-size: var(--fs-300);
+        color: hsl(var(--color-neutral-600) / .80);
+        margin-top: 1rem;
+    }
+}
